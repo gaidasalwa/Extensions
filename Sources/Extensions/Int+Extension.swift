@@ -2,9 +2,9 @@
 // https://docs.swift.org/swift-book
 import Foundation
 
-extension Int {
+public extension Int {
 
-    func minutesSince() -> Int {
+    public func minutesSince() -> Int {
         let timestampSeconds = TimeInterval(self) / 1000.0
         let date = Date(timeIntervalSince1970: timestampSeconds)
         let currentDate = Date()
