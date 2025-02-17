@@ -23,6 +23,8 @@ public extension Location {
         let start = CLLocation(latitude: self.latitude, longitude: self.longitude)
         let end = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let distanceMeters = start.distance(from: end)
-        return round(distanceMeters / 1000.0) / 10 // Convertit en km
+        let distanceKm = distanceMeters / 1000.0
+        let roundedDistance = round(distanceKm * 10) / 10  // Garder 1 seule décimale
+        return roundedDistance
     }
 }
